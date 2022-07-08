@@ -1,0 +1,16 @@
+{
+    "name": "senac/twice",
+    "description": "Fanbase para o grupo Twice como projeto final da matéria PHP",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "cadupomu",
+            "email": "caducando1991@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "phpmailer/phpmailer": "dev-master"
+    }
+}
