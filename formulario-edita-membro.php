@@ -38,19 +38,19 @@ $membro = fnLocalizaMembroPorId($id);
                     <div id="helperNome" class="form-text">Informe o nome completo</div>
                 </div>
                 <div class="mb-3 form-group">
-                    <label for="emailId" class="form-label">E-mail</label>
-                    <input type="email" name="email" id="emailId" class="form-control" placeholder="Informe o e-mail" value="<?= $membro->email ?>">
-                    <div id="helperEmail" class="form-text">Informe o e-mail</div>
-                </div>
-                <div class="mb-3 form-group">
                     <label for="datanascId" class="form-label">Data de Nascimento</label>
-                    <input type="number" name="datanasc" id="datanascId" class="form-control" placeholder="Informe a data de nascimento" value="<?= $membro->datanasc ?>">
+                    <input type="date" name="datanasc" id="datanascId" class="form-control" placeholder="Informe a data de nascimento" value="<?= $membro->datanasc ?>">
                     <div id="helperDatanasc" class="form-text">Informe a data de nascimento</div>
                 </div>
                 <div class="mb-3 form-group">
                     <label for="posicaoId" class="form-label">Posição</label>
-                    <input type="number" name="posicao" id="posicaoId" class="form-control" placeholder="Informe a posição da membro no grupo" value="<?= $membro->posicao ?>">
+                    <input type="text" name="posicao" id="posicaoId" class="form-control" placeholder="Informe a posição da membro no grupo" value="<?= $membro->posicao ?>">
                     <div id="helperPosicao" class="form-text">Informe a posição da membro no grupo</div>
+                </div>
+                <div class="mb-3 form-group">
+                    <label for="descricaoId" class="form-label">Descrição</label>
+                    <input type="text" name="descricao" id="descricaoId" class="form-control" placeholder="Uma breve descrição da membro" >
+                    <div id="helperDescricao" class="form-text">Uma breve descrição da membro</div>
                 </div>
                 <button type="submit" class="btn btn-dark">Enviar</button>
                 <div id="notify" class="form-text text-capitalize fs-4"><?= isset($_COOKIE['notify']) ? $_COOKIE['notify'] : '' ?></div>

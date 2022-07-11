@@ -3,7 +3,7 @@
     require_once('util/base64.php');
     session_start();
 
-    $id = filter_input(INPUT_POST, 'idAluno', FILTER_SANITIZE_NUMBER_INT);
+    $id = filter_input(INPUT_POST, 'idMembro', FILTER_SANITIZE_NUMBER_INT);
     $nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_SPECIAL_CHARS);
     $datanasc = filter_input(INPUT_POST, 'datanasc', FILTER_SANITIZE_SPECIAL_CHARS);
     $posicao = filter_input(INPUT_POST, 'posicao', FILTER_SANITIZE_SPECIAL_CHARS);

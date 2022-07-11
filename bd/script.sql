@@ -14,5 +14,7 @@ create or replace table usuarios(
     id int primary key auto_increment,
     email varchar(250) not null unique,
     senha varchar(255) not null,
+    cargos varchar(250) not null,
     created_at TIMESTAMP not null default CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+

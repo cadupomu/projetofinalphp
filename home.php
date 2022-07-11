@@ -1,4 +1,10 @@
-<?php include('config.php'); ?>
+<?php 
+include('config.php'); 
+require_once('repository/membrorepository.php');
+
+$nome = filter_input(INPUT_GET, 'nome', FILTER_SANITIZE_SPECIAL_CHARS);
+
+?>
 <!doctype html>
 <html lang="pt_BR">
 
@@ -7,6 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Home</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="estilo/estilo.css">
 </head>
 
 <body>
@@ -19,6 +26,41 @@
             </div>
         </div>
     </div>
+
+    <div class="col-6 offset-3">
+            <tbody>
+                <?php foreach(fnLocalizaMembroPorNome($nome) as $membro): ?> 
+                <tr>   
+                <div class="card-group">
+                <div class="card">
+                    <img src="<?= $membro->foto ?>" class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <h5 class="card-title"><?= $membro->nome ?></h5>
+                    <p class="card-text"><?= $membro->datanasc ?></p>
+                    <p class="card-text"><?= $membro->posicao ?></p>
+                    <p class="card-text"><?= $membro->descricao ?></p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="<?= $membro->foto ?>" class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <h5 class="card-title"><?= $membro->nome ?></h5>
+                    <p class="card-text"><?= $membro->datanasc ?></p>
+                    <p class="card-text"><?= $membro->posicao ?></p>
+                    <p class="card-text"><?= $membro->descricao ?></p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="<?= $membro->foto ?>" class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <h5 class="card-title"><?= $membro->nome ?></h5>
+                    <p class="card-text"><?= $membro->datanasc ?></p>
+                    <p class="card-text"><?= $membro->posicao ?></p>
+                    <p class="card-text"><?= $membro->descricao ?></p>
+                    </div>
+                </div>
+                </div>
+        <?php endforeach; ?>
     <?php include("rodape.php"); ?>
 </body>
 

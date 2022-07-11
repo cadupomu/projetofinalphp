@@ -16,25 +16,28 @@
   <body>
     <?php include('navbar.php'); ?>
     <div class="col-6 offset-3">
-            <tbody>
-                <?php foreach(fnLocalizaMembroPorNome($nome) as $membros): ?>
+        <table class="table table-striped">
+            <thead>
                 <tr>
-                <div class="card" style="width: 18rem;">
-               <img src="<?= $membros->foto ?>" class="card-img-top" alt="...">
-               <div class="card-body">
-                 <h5 class="card-title"><?= $membros->nome ?></h5>
-                 <p class="card-text"><?= $membros->descricao ?></p>
-                </div>
-               <ul class="list-group list-group-flush">
-                 <li class="list-group-item"><?= $membros->id ?></li>
-                 <li class="list-group-item"><?= $membros->datanasc ?></li>
-                 <li class="list-group-item"><?= $membros->posicao ?></li>
-               </ul>
-               <div class="card-body">
-                 <a href="#" onclick="gerirUsuario(<?= $membros->id ?>, 'edit');">Editar</a>
-                 <a onclick="return confirm('Deseja realmente excluir?') ? gerirUsuario(<?= $membros->id ?>, 'del') : '';" href="#">Excluir</a>
-                </div>
-                </div>
+                    <th>#</th>
+                    <th>Nome</th>
+                    <th>Data de Nascimento</th>
+                    <th>Posição</th>
+                    <th>Data cadastro</th>
+                    <th colspan="2">Gerenciar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach(fnLocalizaMembroPorNome($nome) as $membro): ?>
+                <tr>
+                   <td><?= $membro->id ?></td> 
+                   <td><?= $membro->nome ?></td>
+                   <td><?= $membro->datanasc ?></td> 
+                   <td><?= $membro->posicao ?></td>  
+                   <td><?= $membro->created_at ?></td> 
+                   <td><a href="#" onclick="gerirUsuario(<?= $membro->id ?>, 'edit');">Editar</a></td> 
+                   <td><a href="#" onclick="return confirm('Deseja realmente excluir?') ? gerirUsuario(<?= $membro->id ?>, 'del') : '';">Excluir</a></td> 
+                </tr>
                 <?php endforeach; ?>
             </tbody>
             <?php if(isset($notificacao)) : ?>
