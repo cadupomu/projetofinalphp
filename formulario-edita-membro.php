@@ -22,7 +22,7 @@ $membro = fnLocalizaMembroPorId($id);
             <legend>Edição de Perfil de Membro</legend>
             <form action="editaMembro.php" method="post" class="form" enctype="multipart/form-data">
                 <div class="card col-4 offset-4 text-center">
-                    <img src="<?= $membro->foto ?>" id="avatarId" class="rounded" alt="foto do usuário">
+                    <img src="<?= $membro->foto ?>" id="avatarId" class="rounded" alt="foto da membro">
                 </div>
                 <div class="mb-3 form-group">
                     <label for="fotoId" class="form-label">Foto</label>
