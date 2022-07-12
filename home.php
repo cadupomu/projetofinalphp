@@ -30,36 +30,20 @@ $nome = filter_input(INPUT_GET, 'nome', FILTER_SANITIZE_SPECIAL_CHARS);
     <div class="col-6 offset-3">
             <tbody>
                 <?php foreach(fnLocalizaMembroPorNome($nome) as $membro): ?> 
-                <tr>   
-                <div class="card-group">
-                <div class="card">
-                    <img src="<?= $membro->foto ?>" class="card-img-top" alt="...">
+                <tr>  
+                <div class="card mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                    <img src="<?= $membro->foto ?>" class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-8">
                     <div class="card-body">
                     <h5 class="card-title"><?= $membro->nome ?></h5>
                     <p class="card-text"><?= $membro->datanasc ?></p>
                     <p class="card-text"><?= $membro->posicao ?></p>
                     <p class="card-text"><?= $membro->descricao ?></p>
                     </div>
-                </div>
-                <div class="card">
-                    <img src="<?= $membro->foto ?>" class="card-img-top" alt="...">
-                    <div class="card-body">
-                    <h5 class="card-title"><?= $membro->nome ?></h5>
-                    <p class="card-text"><?= $membro->datanasc ?></p>
-                    <p class="card-text"><?= $membro->posicao ?></p>
-                    <p class="card-text"><?= $membro->descricao ?></p>
                     </div>
-                </div>
-                <div class="card">
-                    <img src="<?= $membro->foto ?>" class="card-img-top" alt="...">
-                    <div class="card-body">
-                    <h5 class="card-title"><?= $membro->nome ?></h5>
-                    <p class="card-text"><?= $membro->datanasc ?></p>
-                    <p class="card-text"><?= $membro->posicao ?></p>
-                    <p class="card-text"><?= $membro->descricao ?></p>
-                    </div>
-                </div>
-                </div>
         <?php endforeach; ?>
     <?php include("rodape.php"); ?>
 </body>

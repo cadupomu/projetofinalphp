@@ -1,4 +1,4 @@
-<?php 
+?php 
     include('config.php'); 
     require_once('repository/membrorepository.php'); 
     
@@ -24,14 +24,7 @@
                     <th>Data de Nascimento</th>
                     <th>Posição</th>
                     <th>Data cadastro</th>
-                    <?php if($_SESSION['login']->id == 2) {
-                       
-                       ?>
                     <th colspan="2">Gerenciar</th>
-                    <?php } else {
-                    "";
-                   }
-                   ?>
                 </tr>
             </thead>
             <tbody>
@@ -42,15 +35,8 @@
                    <td><?= $membro->datanasc ?></td> 
                    <td><?= $membro->posicao ?></td>  
                    <td><?= $membro->created_at ?></td>
-                   <?php if($_SESSION['login']->id == 2) {
-                       
-                    ?>
                    <td><a href="#" onclick="gerirUsuario(<?= $membro->id ?>, 'edit');">Editar</a></td> 
                    <td><a href="#" onclick="return confirm('Deseja realmente excluir?') ? gerirUsuario(<?= $membro->id ?>, 'del') : '';">Excluir</a></td>
-                   <?php } else {
-                    "";
-                   }
-                   ?>
                 </tr>
                 <?php endforeach; ?>
             </tbody>
