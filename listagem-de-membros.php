@@ -24,7 +24,7 @@
                     <th>Data de Nascimento</th>
                     <th>Posição</th>
                     <th>Data cadastro</th>
-                    <?php if($_SESSION['login']->id == 2) {
+                    <?php if($_SESSION['login']->cargos == "Administrador") {
                        
                        ?>
                     <th colspan="2">Gerenciar</th>
@@ -42,7 +42,7 @@
                    <td><?= $membro->datanasc ?></td> 
                    <td><?= $membro->posicao ?></td>  
                    <td><?= $membro->created_at ?></td>
-                   <?php if($_SESSION['login']->id == 2) {
+                   <?php if($_SESSION['login']->cargos == "Administrador") {
                        
                     ?>
                    <td><a href="#" onclick="gerirUsuario(<?= $membro->id ?>, 'edit');">Editar</a></td> 
